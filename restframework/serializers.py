@@ -12,13 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework import serializers
+from .models import Item
 
-
-# Create your views here.
-
-@api_view(['GET'])
-def getData(request):
-    person = { 'name': 'Joseph Mbote', 'age':24}
-    return Response(person)
+class ItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        fields = '__all__'

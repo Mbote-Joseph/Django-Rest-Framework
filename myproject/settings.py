@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 
     # Apps installed
     'rest_framework',
-    'api'
+    'api',
+    "restframework"
 ]
 
 MIDDLEWARE = [
