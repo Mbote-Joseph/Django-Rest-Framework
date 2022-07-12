@@ -17,4 +17,5 @@ from . import views
 
 urlpatterns = [
     path('', views.getData, name='getData'),
+    path('add', views.postData, name='postData')
 ]
