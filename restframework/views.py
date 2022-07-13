@@ -21,6 +21,16 @@ def postData(request):
         return Response(serializer.data)
     return Response(serializer.errors)
 
+
+@api_view(['PUT', 'POST'])
+def putData(request, pk):
+    item = Item.objects.get(pk=pk)
+    serializer = ItemSerializer(instance=item, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors)
+
 @api_view(['DELETE'])
 def deleteData(request, pk):
     item = Item.objects.get(pk=pk)
