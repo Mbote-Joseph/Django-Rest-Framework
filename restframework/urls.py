@@ -17,5 +17,6 @@ from . import views
 
 urlpatterns = [
     path('get', views.getData, name='getData'),
-    path('post', views.postData, name='postData')
+    path('post', views.postData, name='postData'),
+    path('delete/<int:pk>', views.deleteData, name='deleteData')
 ]

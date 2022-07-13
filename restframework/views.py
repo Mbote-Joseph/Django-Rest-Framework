@@ -20,3 +20,9 @@ def postData(request):
         serializer.save()
         return Response(serializer.data)
     return Response(serializer.errors)
+
+@api_view(['DELETE'])
+def deleteData(request, pk):
+    item = Item.objects.get(pk=pk)
+    item.delete()
+    return Response('Item deleted successfully')
